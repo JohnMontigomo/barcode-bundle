@@ -4291,6 +4291,7 @@ final class pdf417
         $maxecl = 8; // starting error level
         $maxerrsize = (928 - $numcw); // available codewords for error
         while ($maxecl > 0) {
+            $ecl = 0;                 // JohnMontigomo: else error "Bit shift by negative number".
             $errsize = (2 << $ecl);
             if ($maxerrsize >= $errsize) {
                 break;
